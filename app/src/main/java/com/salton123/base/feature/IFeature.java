@@ -1,4 +1,4 @@
-package com.salton123.bookmarksbrowser.feature;
+package com.salton123.base.feature;
 
 /**
  * User: newSalton@outlook.com

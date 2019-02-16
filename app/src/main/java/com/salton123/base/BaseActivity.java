@@ -1,9 +1,10 @@
-package com.salton123.bookmarksbrowser;
+package com.salton123.base;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.salton123.bookmarksbrowser.feature.IFeature;
+
+import com.salton123.base.feature.IFeature;
 
 import java.util.ArrayList;
 import java.util.List;
