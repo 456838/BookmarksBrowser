@@ -1,6 +1,5 @@
 package com.salton123.bookmarksbrowser;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 /**
@@ -9,7 +8,7 @@ import android.os.Bundle;
  * ModifyTime: 18:18
  * Description:
  */
-public class SplashActivity extends Activity {
+public class SplashActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
