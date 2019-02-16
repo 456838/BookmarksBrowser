@@ -2,8 +2,10 @@ package com.salton123.base.feature;
 
 
 import android.app.Activity;
+import android.graphics.Color;
 
 import com.gyf.barlibrary.ImmersionBar;
+import com.salton123.bookmarksbrowser.R;
 
 /**
  * User: newSalton@outlook.com
@@ -27,9 +29,8 @@ public class ImmersionFeature implements IFeature {
 
     public ImmersionBar getImmersionBar() {
         return ImmersionBar.with(mActivity)
-                .statusBarDarkFont(true)
-                .transparentBar()
-                .transparentNavigationBar();
+                .statusBarColor(R.color.color_ff728ac6)
+                .statusBarDarkFont(false);
     }
 
     @Override
