@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_ffffffff"
-    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     >
 
-    <TextView
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/immersionBarHeight"
+        android:background="@color/color_ff728ac6"
+        >
+
+        <include
+            layout="@layout/search_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarHeight"
+            android:layout_marginTop="@dimen/statusBarHeight"
+            />
+    </FrameLayout>
+
+    <com.salton123.view.IconTextView
+        android:id="@+id/tvHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:text="@string/if_search"
+        android:textSize="80sp"
+        app:if_enablePressEffect="true"
+        app:if_fillColor="#ffcc00"
         />
 
 </LinearLayout>

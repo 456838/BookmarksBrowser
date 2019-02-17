@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="actionBarHeight" type="dimen">56dp</item>
+    <item name="statusBarHeight" type="dimen">40dp</item>
+    <item name="immersionBarHeight" type="dimen">96dp</item>
+    <dimen name="a">16.0dip</dimen>
+    <dimen name="b">16.0dip</dimen>
+    <dimen name="c">4.0dip</dimen>
+    <dimen name="d">6.0dip</dimen>
+    <dimen name="e">8.0dip</dimen>
+    <dimen name="f">4.0dip</dimen>
+    <dimen name="g">2.0dip</dimen>
+    <dimen name="h">4.0dip</dimen>
+    <dimen name="i">24.0dip</dimen>
+    <dimen name="j">12.0dip</dimen>
+    <dimen name="k">12.0dip</dimen>
+    <dimen name="l">4.0dip</dimen>
+    <dimen name="m">10.0dip</dimen>
+    <dimen name="n">42.0dip</dimen>
+    <dimen name="o">11.0dip</dimen>
+    <dimen name="p">10.0dip</dimen>
+    <dimen name="q">11.0dip</dimen>
+    <dimen name="r">2.0dip</dimen>
+    <dimen name="s">21.0dip</dimen>
+    <dimen name="t">11.0dip</dimen>
+    <dimen name="u">20.0dip</dimen>
+    <dimen name="v">32.0dip</dimen>
+    <dimen name="w">13.0sp</dimen>
+    <dimen name="x">12.0dip</dimen>
+    <dimen name="y">8.0dip</dimen>
+    <dimen name="z">64.0dip</dimen>
+    <dimen name="a0">64.0dip</dimen>
+    <dimen name="a1">10.0dip</dimen>
+    <dimen name="a2">@dimen/y</dimen>
+    <dimen name="a3">16.0dip</dimen>
+    <dimen name="a4">2.0dip</dimen>
+    <dimen name="a5">3.0dip</dimen>
+    <dimen name="a6">24.0dip</dimen>
+    <dimen name="a7">13.0sp</dimen>
+    <dimen name="a8">10.0dip</dimen>
+    <dimen name="a9">5.0dip</dimen>
+    <dimen name="a_">8.0dip</dimen>
+</resources>

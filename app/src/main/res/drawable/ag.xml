@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector
-    xmlns:android="http://schemas.android.com/apk/res/android">
+  xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <layer-list>
             <item>
@@ -9,7 +9,7 @@
                 </shape>
             </item>
             <item android:gravity="center">
-                <bitmap android:gravity="center" android:src="@mipmap/ic_launcher" />
+                <bitmap android:gravity="center" android:src="@drawable/bv" />
             </item>
         </layer-list>
     </item>
