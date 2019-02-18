@@ -3,9 +3,6 @@ package com.salton123.adapter.abslistview.base;
 
 import com.salton123.adapter.abslistview.ViewHolder;
 
-/**
- * Created by zhy on 16/6/22.
- */
 public interface ItemViewDelegate<T> {
 
     public abstract int getItemViewLayoutId();
