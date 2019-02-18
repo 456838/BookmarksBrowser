@@ -29,6 +29,5 @@ public class NvUrlView extends LinearLayout {
 
     private void initView() {
         LayoutInflater.from(getContext()).inflate(R.layout.search_title_inner, this);
-        setBackgroundResource(R.drawable.p);
     }
 }

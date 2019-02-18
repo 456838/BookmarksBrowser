@@ -15,7 +15,7 @@
         >
 
         <include
-            layout="@layout/search_title_inner"
+            layout="@layout/search_title"
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionBarHeight"
             android:layout_marginTop="@dimen/statusBarHeight"
