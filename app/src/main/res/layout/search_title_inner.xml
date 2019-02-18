@@ -15,7 +15,6 @@
         >
 
         <ProgressBar
-            android:id="@+id/progressBar"
             android:layout_width="16.0dip"
             android:layout_height="16.0dip"
             android:indeterminateDrawable="@drawable/be"
@@ -24,7 +23,6 @@
             />
 
         <com.salton123.view.IconFontTextView
-            android:id="@+id/ivSearch"
             android:layout_width="20.0dip"
             android:layout_height="20.0dip"
             android:layout_centerVertical="true"
@@ -39,7 +37,6 @@
             />
 
         <com.salton123.view.IconFontTextView
-            android:id="@+id/tvLeft"
             android:layout_width="20.0dip"
             android:layout_height="20.0dip"
             android:layout_centerVertical="true"
@@ -53,7 +50,6 @@
     </RelativeLayout>
 
     <EditText
-        android:id="@+id/etKeyword"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_toLeftOf="@+id/g4"
@@ -83,7 +79,6 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/g6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/a"
@@ -99,7 +94,6 @@
             />
 
         <com.salton123.view.IconFontTextView
-            android:id="@+id/g0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/hl"
