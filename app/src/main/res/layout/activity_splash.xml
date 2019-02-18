@@ -15,21 +15,21 @@
         >
 
         <include
-            layout="@layout/search_title"
+            layout="@layout/search_title_inner"
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionBarHeight"
             android:layout_marginTop="@dimen/statusBarHeight"
             />
     </FrameLayout>
 
-    <com.salton123.view.IconTextView
+    <com.salton123.view.IconFontTextView
         android:id="@+id/tvHint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/if_search"
+        android:textColor="#ffcc00"
         android:textSize="80sp"
         app:if_enablePressEffect="true"
-        app:if_fillColor="#ffcc00"
         />
 
 </LinearLayout>
