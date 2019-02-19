@@ -3,8 +3,8 @@
     <color name="color_00ffffff">#00ffffff</color>
     <color name="color_ccffffff">#ccffffff</color>
     <color name="color_ff728ac6">#ff728ac6</color>
-    <color name="color_ff000000">#ff000000</color>
-    <color name="color_ffffffff">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
     <color name="color_ff6c6c6c">#ff6c6c6c</color>
     <color name="a">#ffda6b69</color>
     <color name="b">#ffc4605f</color>

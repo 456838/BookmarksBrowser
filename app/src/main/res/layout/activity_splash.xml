@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_ffffffff"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="false"
     android:orientation="vertical"
     >
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/immersionBarHeight"
@@ -22,14 +21,88 @@
             />
     </FrameLayout>
 
-    <com.salton123.view.IconFontTextView
-        android:id="@+id/tvHint"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/if_search"
-        android:textColor="#ffcc00"
-        android:textSize="80sp"
-        app:if_enablePressEffect="true"
-        />
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/bottom_height" />
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bottom_height"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        >
+
+        <com.salton123.view.IconFontTextView
+            android:id="@+id/tvActionLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/if_left_arrow"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:if_enablePressEffect="true"
+            />
+
+        <com.salton123.view.IconFontTextView
+            android:id="@+id/tvActionRight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/if_right_arrow"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:if_enablePressEffect="true"
+            />
+
+        <com.salton123.view.IconFontTextView
+            android:id="@+id/tvActionHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/if_home"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:if_enablePressEffect="true"
+            />
+
+        <com.salton123.view.IconFontTextView
+            android:id="@+id/tvActionWindows"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/if_retangel"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:if_enablePressEffect="true"
+            />
+
+        <com.salton123.view.IconFontTextView
+            android:id="@+id/tvActionMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/if_menu"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/bottom_height"
+        android:background="@drawable/actionbar_shadow_up" />
+</FrameLayout>

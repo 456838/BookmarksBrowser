@@ -101,7 +101,7 @@
             android:layout_marginRight="2.0dip"
             android:gravity="center"
             android:text="@string/if_more"
-            android:textColor="@color/color_ffffffff"
+            android:textColor="@color/white"
             android:textSize="18.0dip"
             />
     </LinearLayout>
