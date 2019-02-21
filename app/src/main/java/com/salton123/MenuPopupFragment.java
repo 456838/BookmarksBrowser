@@ -27,7 +27,7 @@ public class MenuPopupFragment extends DialogFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        // setStyle(STYLE_NORMAL,R.style.salton_full_screen_dialog_dim);
+        setStyle(STYLE_NORMAL, R.style.MyDialog);
         super.onCreate(savedInstanceState);
     }
 
@@ -39,7 +39,7 @@ public class MenuPopupFragment extends DialogFragment {
     @Override
     public void onStart() {
         super.onStart();
-        Log.i(TAG,"[onStart]");
+        Log.i(TAG, "[onStart]");
         Window window = getDialog().getWindow();
         WindowManager.LayoutParams params = window.getAttributes();
         params.gravity = Gravity.BOTTOM;
@@ -52,6 +52,6 @@ public class MenuPopupFragment extends DialogFragment {
     @Override
     public void onResume() {
         super.onResume();
-        Log.i(TAG,"[onStart]");
+        Log.i(TAG, "[onResume]");
     }
 }

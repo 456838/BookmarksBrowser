@@ -13,6 +13,9 @@ import android.view.WindowManager;
 
 import com.salton123.bookmarksbrowser.R;
 
+import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
+
 
 /**
  * User: newSalton@outlook.com
@@ -24,6 +27,8 @@ public class TitleMorePopupWindow extends DialogFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        setStyle(STYLE_NORMAL, R.style.MyDialog);
         super.onCreate(savedInstanceState);
     }
 
@@ -39,9 +44,10 @@ public class TitleMorePopupWindow extends DialogFragment {
         WindowManager.LayoutParams params = window.getAttributes();
         params.gravity = Gravity.TOP;
         params.width = WindowManager.LayoutParams.MATCH_PARENT;
+        params.y = (int) getResources().getDimension(R.dimen.immersionBarHeight);
         window.setAttributes(params);
-        // window.setWindowAnimations(R.style.slide_popup_ani);
-        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        window.setWindowAnimations(R.style.slide_popup_ani);
+        window.setBackgroundDrawable(new ColorDrawable(Color.GREEN));
         window.setDimAmount(0f);
     }
 }
