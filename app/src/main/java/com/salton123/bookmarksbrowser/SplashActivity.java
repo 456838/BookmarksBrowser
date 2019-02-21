@@ -3,6 +3,8 @@ package com.salton123.bookmarksbrowser;
 import android.os.Bundle;
 import android.view.View;
 
+import com.salton123.MenuPopupFragment;
+import com.salton123.TitleMorePopupWindow;
 import com.salton123.base.BaseActivity;
 import com.salton123.base.feature.ImmersionFeature;
 import com.salton123.view.IconFontTextView;
@@ -16,6 +18,7 @@ import com.salton123.view.IconFontTextView;
 public class SplashActivity extends BaseActivity implements View.OnClickListener {
     private ImmersionFeature mImmersionFeature;
     private IconFontTextView tvActionLeft, tvActionRight, tvActionHome, tvActionWindows, tvActionMenu;
+    private IconFontTextView tvTitleMore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +35,13 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
         tvActionHome = findViewById(R.id.tvActionHome);
         tvActionWindows = findViewById(R.id.tvActionWindows);
         tvActionMenu = findViewById(R.id.tvActionMenu);
+        tvTitleMore = findViewById(R.id.tvTitleMore);
         tvActionLeft.setOnClickListener(this);
         tvActionRight.setOnClickListener(this);
         tvActionHome.setOnClickListener(this);
         tvActionWindows.setOnClickListener(this);
         tvActionMenu.setOnClickListener(this);
+        tvTitleMore.setOnClickListener(this);
     }
 
     @Override
@@ -47,10 +52,15 @@ public class SplashActivity extends BaseActivity implements View.OnClickListener
             case R.id.tvActionRight:
                 break;
             case R.id.tvActionHome:
+
                 break;
             case R.id.tvActionWindows:
                 break;
             case R.id.tvActionMenu:
+                new MenuPopupFragment().show(getFragmentManager(), "MenuPopupFragment");
+                break;
+            case R.id.tvTitleMore:
+                new TitleMorePopupWindow().show(getFragmentManager(), "TitleMorePopupWindow");
                 break;
             default:
                 break;
