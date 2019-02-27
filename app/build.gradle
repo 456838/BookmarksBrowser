@@ -3,7 +3,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.salton123.bookmarksbrowser"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -14,8 +14,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    android {
+        compileOptions {
+            sourceCompatibility 1.8
+            targetCompatibility 1.8
+        }
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':jiaozivideoplayer')
+    implementation 'com.contrarywind:Android-PickerView:4.1.7'
+    api 'com.google.code.gson:gson:2.8.5'
 }

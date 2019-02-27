@@ -13,9 +13,6 @@ import android.view.WindowManager;
 
 import com.salton123.bookmarksbrowser.R;
 
-import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
-import static android.view.View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
-
 
 /**
  * User: newSalton@outlook.com
@@ -27,7 +24,6 @@ public class TitleMorePopupWindow extends DialogFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         setStyle(STYLE_NORMAL, R.style.MyDialog);
         super.onCreate(savedInstanceState);
     }
@@ -35,6 +31,27 @@ public class TitleMorePopupWindow extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.comp_title_more_popup, null);
+    }
+
+    private boolean isPlay = false;
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        final VoiceIntroAniView imageView = view.findViewById(R.id.ivAni);
+        imageView.start();
+        isPlay = true;
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isPlay) {
+                    imageView.pause();
+                } else {
+                    imageView.start();
+                }
+                isPlay = !isPlay;
+            }
+        });
     }
 
     @Override

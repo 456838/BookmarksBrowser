@@ -9,18 +9,18 @@ import android.widget.BaseAdapter;
 import com.salton123.adapter.abslistview.base.ItemViewDelegate;
 import com.salton123.adapter.abslistview.base.ItemViewDelegateManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MultiItemTypeAdapter<T> extends BaseAdapter {
     protected Context mContext;
-    protected List<T> mDatas;
+    protected List<T> mDatas = new ArrayList<>();
 
     private ItemViewDelegateManager mItemViewDelegateManager;
 
 
-    public MultiItemTypeAdapter(Context context, List<T> datas) {
+    public MultiItemTypeAdapter(Context context) {
         this.mContext = context;
-        this.mDatas = datas;
         mItemViewDelegateManager = new ItemViewDelegateManager();
     }
 
@@ -35,8 +35,9 @@ public class MultiItemTypeAdapter<T> extends BaseAdapter {
 
     @Override
     public int getViewTypeCount() {
-        if (useItemViewDelegateManager())
+        if (useItemViewDelegateManager()) {
             return mItemViewDelegateManager.getItemViewDelegateCount();
+        }
         return super.getViewTypeCount();
     }
 
@@ -53,16 +54,14 @@ public class MultiItemTypeAdapter<T> extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ItemViewDelegate itemViewDelegate = mItemViewDelegateManager.getItemViewDelegate(mDatas.get(position), position);
         int layoutId = itemViewDelegate.getItemViewLayoutId();
-        ViewHolder viewHolder = null ;
-        if (convertView == null)
-        {
+        ViewHolder viewHolder = null;
+        if (convertView == null) {
             View itemView = LayoutInflater.from(mContext).inflate(layoutId, parent,
                     false);
             viewHolder = new ViewHolder(mContext, itemView, parent, position);
             viewHolder.mLayoutId = layoutId;
-            onViewHolderCreated(viewHolder,viewHolder.getConvertView());
-        } else
-        {
+            onViewHolderCreated(viewHolder, viewHolder.getConvertView());
+        } else {
             viewHolder = (ViewHolder) convertView.getTag();
             viewHolder.mPosition = position;
         }
@@ -76,8 +75,8 @@ public class MultiItemTypeAdapter<T> extends BaseAdapter {
         mItemViewDelegateManager.convert(viewHolder, item, position);
     }
 
-    public void onViewHolderCreated(ViewHolder holder , View itemView )
-    {}
+    public void onViewHolderCreated(ViewHolder holder, View itemView) {
+    }
 
     @Override
     public int getCount() {
@@ -94,5 +93,32 @@ public class MultiItemTypeAdapter<T> extends BaseAdapter {
         return position;
     }
 
+    public List<T> getDatas() {
+        return mDatas;
+    }
 
+    public void setDatas(List<T> datas) {
+        this.mDatas = datas;
+    }
+
+    public void addAll(List<T> p_List) {
+        mDatas.clear();
+        mDatas.addAll(p_List);
+        notifyDataSetChanged();
+    }
+
+    public void addToList(List<T> p_List) {
+        mDatas.addAll(p_List);
+        notifyDataSetChanged();
+    }
+
+    public void addNotify(T p_Object) {
+        mDatas.add(p_Object);
+        notifyDataSetChanged();
+    }
+
+    public void add(T item) {
+        mDatas.add(item);
+    }
+    
 }

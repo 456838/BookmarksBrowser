@@ -8,9 +8,8 @@ import java.util.List;
 
 public abstract class CommonAdapter<T> extends MultiItemTypeAdapter<T> {
 
-    public CommonAdapter(Context context, final int layoutId, List<T> datas) {
-        super(context, datas);
-
+    public CommonAdapter(Context context, final int layoutId) {
+        super(context);
         addItemViewDelegate(new ItemViewDelegate<T>() {
             @Override
             public int getItemViewLayoutId() {
