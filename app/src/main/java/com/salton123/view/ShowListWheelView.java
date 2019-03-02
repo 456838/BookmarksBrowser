@@ -3,13 +3,11 @@ package com.salton123.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.salton123.adapter.abslistview.CommonAdapter;
 import com.salton123.adapter.abslistview.ViewHolder;
+import com.salton123.base.AdapterBase;
 import com.salton123.bean.LiveAssetCategoryList;
 import com.salton123.bookmarksbrowser.R;
 
@@ -70,10 +68,11 @@ public class ShowListWheelView extends LinearLayout {
         mPlayListCallback = playListCallback;
     }
 
-    static class MainTypeAdapter extends CommonAdapter<LiveAssetCategoryList.DataBean.CategoryBean> {
 
-        public MainTypeAdapter(Context context) {
-            super(context, R.layout.adapter_item_show_list_main_type);
+    static class MainTypeAdapter extends AdapterBase<LiveAssetCategoryList.DataBean.CategoryBean> {
+
+        public MainTypeAdapter(Context pContext) {
+            super(pContext, R.layout.adapter_item_show_list_main_type);
         }
 
         @Override
@@ -82,7 +81,7 @@ public class ShowListWheelView extends LinearLayout {
         }
     }
 
-    static class SubTypeAdapter extends CommonAdapter<LiveAssetCategoryList.DataBean.CategoryBean.ChannelsBean> {
+    static class SubTypeAdapter extends AdapterBase<LiveAssetCategoryList.DataBean.CategoryBean.ChannelsBean> {
 
         public SubTypeAdapter(Context context) {
             super(context, R.layout.adapter_item_show_list_sub_type);
