@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.salton123.base.BaseActivity;
+import com.salton123.base.feature.ImmersionFeature;
+import com.salton123.base.feature.PermissionFeature;
 import com.salton123.bean.LiveAssetCategoryList;
 import com.salton123.bean.LiveChannelInfo;
 import com.salton123.bean.LivePlayUrlM3u8;
@@ -36,6 +38,7 @@ public class VideoPlayActivity extends BaseActivity implements RequestUtil.HttpR
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        addFeature(new PermissionFeature(this));
         setContentView(R.layout.aty_video_play);
         videoPlayer = findViewById(R.id.videoPlayer);
         RequestUtil.get(liveAssetCategoryListUrl, LiveAssetCategoryList.class, this);
