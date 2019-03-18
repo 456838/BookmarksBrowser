@@ -40,15 +40,13 @@ public class PermissionFeature extends Fragment implements IFeature {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (!isPermissionGrant(mActivity)) {
-            if (Build.VERSION.SDK_INT >= 23) {
-                requestPermissions(permissions, REQUEST_CODE);
-            }
+            requestPermissions(permissions, REQUEST_CODE);
         }
     }
 
     public String[] getPermissionArr() {
         return new String[]{
-                Manifest.permission.INTERNET, Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.INTERNET, Manifest.permission.WRITE_EXTERNAL_STORAGE,
                 Manifest.permission.ACCESS_FINE_LOCATION
         };
     }
@@ -68,7 +66,7 @@ public class PermissionFeature extends Fragment implements IFeature {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,  String[] permissions,  int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == this.REQUEST_CODE) {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
