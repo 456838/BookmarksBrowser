@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.salton123.base.BaseActivity;
@@ -26,6 +25,7 @@ import com.salton123.view.ShowListWheelView;
  * Description:
  */
 public class VideoPlayActivity extends BaseActivity implements RequestUtil.HttpResponseCallback {
+    private ImmersionFeature mImmersionFeature;
     private static final String TAG = "VideoPlayActivity";
     private VideoViewWrapper videoPlayer;
     private String liveAssetCategoryListUrl = "http://ott.liveapi.mgtv.com/v1/epg/turnplay/getLiveAssetCategoryList?mac_id=F4-60-E2-AE-B8-92&net_id=&device_id=71f110234939485693ecdef05cf7f2a93ddaaa6b&uuid=mgtvmacF460E2AEB892&license=ZgOOgo5MjkyOTAUOvw4OBkuqtA2qDbR8hyANqnY7e3a%2FBoc7vwW%2FS5UNqnt7lZWVIJmqjkyOTI5MZgOOgg%3D%3D&ticket=&buss_id=1000014&version=5.6.307.200.2.DBEI.0.0_Release&platform=3&type=3&mf=Xiaomi&mode=Redmi+6+Pro&_support=00100000011&media_asset_id=RollingBroadcast&pre=0";
@@ -37,6 +37,8 @@ public class VideoPlayActivity extends BaseActivity implements RequestUtil.HttpR
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        mImmersionFeature = new ImmersionFeature(this);
+        addFeature(mImmersionFeature);
         super.onCreate(savedInstanceState);
         addFeature(new PermissionFeature(this));
         setContentView(R.layout.aty_video_play);
@@ -51,9 +53,7 @@ public class VideoPlayActivity extends BaseActivity implements RequestUtil.HttpR
                 mShowListWheelView.setVisibility(View.VISIBLE);
             }
         });
-        mShowListWheelView.setPlayListCallback(item -> {
-            RequestUtil.get(livePlayUrlM3u8 + item.getId(), LivePlayUrlM3u8.class, this);
-        });
+        mShowListWheelView.setPlayListCallback(item -> RequestUtil.get(livePlayUrlM3u8 + item.getId(), LivePlayUrlM3u8.class, this));
     }
 
     @Override
@@ -70,8 +70,10 @@ public class VideoPlayActivity extends BaseActivity implements RequestUtil.HttpR
             VodInfo info = (VodInfo) responseData;
             String text = mLivePlayUrlM3u8.getData().getPlay_list().get(0).getText();
             String url = info.getInfo();
-            videoPlayer.updatePlayUrl(new VideoBean(0, url));
-            videoPlayer.startPlay();
+            videoPlayer.post(() -> {
+                videoPlayer.updatePlayUrl(new VideoBean(0, url));
+                videoPlayer.startPlay();
+            });
             Log.i(TAG, "title:" + text + ",url:" + url);
         }
     }
