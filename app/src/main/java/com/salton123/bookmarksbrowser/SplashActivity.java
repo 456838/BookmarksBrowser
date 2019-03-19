@@ -30,7 +30,7 @@ public class SplashActivity extends BaseActivity {
         mImmersionFeature = new ImmersionFeature(this);
         addFeature(mImmersionFeature);
     }
-    
+
     @Override
     public void initViewAndData() {
         tvActionLeft = findViewById(R.id.tvActionLeft);

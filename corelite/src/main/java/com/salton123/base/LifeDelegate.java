@@ -28,7 +28,7 @@ public abstract class LifeDelegate {
     }
 
     void onCreate(Bundle saveInstanceState) {
-        mComponentLife.initListener();
+        mComponentLife.initVariable(saveInstanceState);
     }
 
     View onCreateView() {
