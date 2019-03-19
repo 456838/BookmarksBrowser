@@ -19,7 +19,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 
-import com.salton123.bookmarksbrowser.R;
+import com.salton123.corelite.R;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -37,8 +37,8 @@ import java.util.Set;
 @TargetApi(Build.VERSION_CODES.KITKAT)
 public class ImmersionBar {
 
-    private static final int IMMERSION_STATUS_BAR_VIEW = R.id.immersion_status_bar_view;
-    private static final int IMMERSION_NAVIGATION_BAR_VIEW = R.id.immersion_navigation_bar_view;
+    private static final int IMMERSION_STATUS_BAR_VIEW = R.id.salton_id_immersion_status_bar_view;
+    private static final int IMMERSION_NAVIGATION_BAR_VIEW = R.id.salton_id_immersion_navigation_bar_view;
     private static final String NAVIGATIONBAR_IS_MIN = "navigationbar_is_min";
     private static final String MIUI_STATUS_BAR_DARK = "EXTRA_FLAG_STATUS_BAR_DARK_MODE";
     private static final String MIUI_NAVIGATION_BAR_DARK = "EXTRA_FLAG_NAVIGATION_BAR_DARK_MODE";

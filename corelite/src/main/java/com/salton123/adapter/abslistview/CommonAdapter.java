@@ -4,8 +4,6 @@ import android.content.Context;
 
 import com.salton123.adapter.abslistview.base.ItemViewDelegate;
 
-import java.util.List;
-
 public abstract class CommonAdapter<T> extends MultiItemTypeAdapter<T> {
 
     public CommonAdapter(Context context, final int layoutId) {

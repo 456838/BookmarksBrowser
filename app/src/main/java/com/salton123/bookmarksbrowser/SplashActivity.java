@@ -15,21 +15,24 @@ import com.salton123.view.IconFontTextView;
  * ModifyTime: 18:18
  * Description:
  */
-public class SplashActivity extends BaseActivity implements View.OnClickListener {
+public class SplashActivity extends BaseActivity {
     private ImmersionFeature mImmersionFeature;
     private IconFontTextView tvActionLeft, tvActionRight, tvActionHome, tvActionWindows, tvActionMenu;
     private IconFontTextView tvTitleMore;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        mImmersionFeature = new ImmersionFeature(this);
-        addFeature(mImmersionFeature);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-        initViewAndData();
+    public int getLayout() {
+        return R.layout.activity_splash;
     }
 
-    private void initViewAndData() {
+    @Override
+    public void initVariable(Bundle savedInstanceState) {
+        mImmersionFeature = new ImmersionFeature(this);
+        addFeature(mImmersionFeature);
+    }
+    
+    @Override
+    public void initViewAndData() {
         tvActionLeft = findViewById(R.id.tvActionLeft);
         tvActionRight = findViewById(R.id.tvActionRight);
         tvActionHome = findViewById(R.id.tvActionHome);

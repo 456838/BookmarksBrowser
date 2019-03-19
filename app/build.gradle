@@ -8,6 +8,7 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    
     buildTypes {
         release {
             minifyEnabled false
@@ -26,4 +27,5 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api 'com.google.code.gson:gson:2.8.5'
+    api project(':corelite')
 }

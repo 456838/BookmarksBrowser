@@ -36,12 +36,19 @@ public class VideoPlayActivity extends BaseActivity implements RequestUtil.HttpR
     private FrameLayout llRoot;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public int getLayout() {
+        return R.layout.aty_video_play;
+    }
+
+    @Override
+    public void initVariable(Bundle savedInstanceState) {
         mImmersionFeature = new ImmersionFeature(this);
         addFeature(mImmersionFeature);
-        super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void initViewAndData() {
         addFeature(new PermissionFeature(this));
-        setContentView(R.layout.aty_video_play);
         videoPlayer = findViewById(R.id.videoPlayer);
         RequestUtil.get(liveAssetCategoryListUrl, LiveAssetCategoryList.class, this);
         mShowListWheelView = findViewById(R.id.showListWheelView);
@@ -88,4 +95,6 @@ public class VideoPlayActivity extends BaseActivity implements RequestUtil.HttpR
         super.onDestroy();
         videoPlayer.pausePlay();
     }
+
+
 }
