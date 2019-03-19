@@ -3,11 +3,11 @@ package com.salton123.bookmarksbrowser;
 import android.os.Bundle;
 import android.view.View;
 
+import com.gyf.barlibrary.BarHide;
 import com.salton123.MenuPopupFragment;
 import com.salton123.TitleMorePopupWindow;
 import com.salton123.base.BaseActivity;
 import com.salton123.base.feature.ImmersionFeature;
-import com.salton123.view.IconFontTextView;
 
 /**
  * User: newSalton@outlook.com
@@ -31,6 +31,7 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void initVariable(Bundle savedInstanceState) {
         mImmersionFeature = new ImmersionFeature(this);
+        // mImmersionFeature.getImmersionBar().hideBar(BarHide.FLAG_HIDE_NAVIGATION_BAR);
         addFeature(mImmersionFeature);
     }
 
@@ -62,4 +63,31 @@ public class SplashActivity extends BaseActivity {
                 break;
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mImmersionFeature.onBind();
+    }
+
+    // @Override
+    // public void onWindowFocusChanged(boolean hasFocus) {
+    //     super.onWindowFocusChanged(hasFocus);
+    //     if (hasFocus) {
+    //         getWindow().getDecorView().setSystemUiVisibility(
+    //                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+    //                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+    //                         | View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+    //     }
+    // }
 }
