@@ -17,12 +17,15 @@ import com.salton123.view.IconFontTextView;
  */
 public class SplashActivity extends BaseActivity {
     private ImmersionFeature mImmersionFeature;
-    private IconFontTextView tvActionLeft, tvActionRight, tvActionHome, tvActionWindows, tvActionMenu;
-    private IconFontTextView tvTitleMore;
 
     @Override
     public int getLayout() {
         return R.layout.activity_splash;
+    }
+
+    @Override
+    public View getTitleBar() {
+        return inflater().inflate(R.layout.default_search_title, null);
     }
 
     @Override
@@ -33,18 +36,8 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     public void initViewAndData() {
-        tvActionLeft = findViewById(R.id.tvActionLeft);
-        tvActionRight = findViewById(R.id.tvActionRight);
-        tvActionHome = findViewById(R.id.tvActionHome);
-        tvActionWindows = findViewById(R.id.tvActionWindows);
-        tvActionMenu = findViewById(R.id.tvActionMenu);
-        tvTitleMore = findViewById(R.id.tvTitleMore);
-        tvActionLeft.setOnClickListener(this);
-        tvActionRight.setOnClickListener(this);
-        tvActionHome.setOnClickListener(this);
-        tvActionWindows.setOnClickListener(this);
-        tvActionMenu.setOnClickListener(this);
-        tvTitleMore.setOnClickListener(this);
+        setListener(R.id.tvActionLeft, R.id.tvActionRight, R.id.tvActionHome,
+                R.id.tvActionWindows, R.id.tvActionMenu, R.id.tvTitleMore);
     }
 
     @Override
