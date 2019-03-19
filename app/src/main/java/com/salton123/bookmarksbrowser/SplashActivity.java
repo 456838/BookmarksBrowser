@@ -7,6 +7,7 @@ import com.salton123.MenuPopupFragment;
 import com.salton123.TitleMorePopupWindow;
 import com.salton123.base.BaseActivity;
 import com.salton123.base.feature.ImmersionFeature;
+import com.salton123.video.VideoPlayActivity;
 import com.salton123.view.IconFontTextView;
 
 /**
@@ -37,7 +38,9 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void initViewAndData() {
         setListener(R.id.tvActionLeft, R.id.tvActionRight, R.id.tvActionHome,
-                R.id.tvActionWindows, R.id.tvActionMenu, R.id.tvTitleMore);
+                R.id.tvActionWindows, R.id.tvActionMenu, R.id.tvTitleMore,
+                R.id.ivManguoTvShow
+        );
     }
 
     @Override
@@ -57,6 +60,9 @@ public class SplashActivity extends BaseActivity {
                 break;
             case R.id.tvTitleMore:
                 new TitleMorePopupWindow().show(getFragmentManager(), "TitleMorePopupWindow");
+                break;
+            case R.id.ivManguoTvShow:
+                openActivity(VideoPlayActivity.class, null);
                 break;
             default:
                 break;
