@@ -9,9 +9,16 @@
     <GridView
         android:id="@+id/gvMenu"
         android:layout_width="match_parent"
-        android:layout_height="278dp"
+        android:layout_height="200dp"
         android:layout_gravity="bottom"
-        android:background="#ff00cc"
+        android:background="#ffffff"
+        android:horizontalSpacing="5dp"
+        android:numColumns="4"
+        android:paddingTop="10dp"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp"
+        tools:listitem="@layout/adapter_item_menu_grid"
         />
 
 </FrameLayout>

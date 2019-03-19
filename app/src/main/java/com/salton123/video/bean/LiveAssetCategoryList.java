@@ -1,4 +1,4 @@
-package com.salton123.bean;
+package com.salton123.video.bean;
 
 import java.util.List;
 

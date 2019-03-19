@@ -13,6 +13,8 @@ import android.widget.GridView;
 
 import com.salton123.base.BaseDialogFragment;
 import com.salton123.bookmarksbrowser.R;
+import com.salton123.bookmarksbrowser.bean.GridMenuItem;
+import com.salton123.view.MenuGridAdapter;
 
 
 /**
@@ -25,6 +27,7 @@ public class MenuPopupFragment extends BaseDialogFragment {
 
     private static final String TAG = "MenuPopupFragment";
     private GridView gvMenu;
+    private MenuGridAdapter mMenuGridAdapter;
 
     @Override
     public int getLayout() {
@@ -39,6 +42,21 @@ public class MenuPopupFragment extends BaseDialogFragment {
     @Override
     public void initViewAndData() {
         gvMenu = f(R.id.gvMenu);
+        mMenuGridAdapter = new MenuGridAdapter(activity());
+        gvMenu.setAdapter(mMenuGridAdapter);
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("历史", getString(R.string.if_retangel)));
+        mMenuGridAdapter.notifyDataSetChanged();
     }
 
     @Override
