@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BookmarksBrowser.iml" filepath="$PROJECT_DIR$/.idea/BookmarksBrowser.iml" />
       <module fileurl="file://$PROJECT_DIR$/BookmarksBrowser.iml" filepath="$PROJECT_DIR$/BookmarksBrowser.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/corelite/corelite.iml" filepath="$PROJECT_DIR$/corelite/corelite.iml" />
       <module fileurl="file://$PROJECT_DIR$/corelite/corelite.iml" filepath="$PROJECT_DIR$/corelite/corelite.iml" />
     </modules>
   </component>

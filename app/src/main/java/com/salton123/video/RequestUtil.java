@@ -1,7 +1,6 @@
 package com.salton123.video;
 
 import com.google.gson.Gson;
-import com.salton123.bean.LivePlayUrlM3u8;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
