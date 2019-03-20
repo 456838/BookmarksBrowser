@@ -5,10 +5,7 @@ import android.view.View;
 
 import com.salton123.MenuPopupFragment;
 import com.salton123.TitleMorePopupWindow;
-import com.salton123.base.BaseActivity;
-import com.salton123.base.feature.ImmersionFeature;
 import com.salton123.video.VideoPlayActivity;
-import com.salton123.view.IconFontTextView;
 
 /**
  * User: newSalton@outlook.com
@@ -16,8 +13,7 @@ import com.salton123.view.IconFontTextView;
  * ModifyTime: 18:18
  * Description:
  */
-public class SplashActivity extends BaseActivity {
-    private ImmersionFeature mImmersionFeature;
+public class SplashActivity extends BookBaseActivity {
 
     @Override
     public int getLayout() {
@@ -31,8 +27,7 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     public void initVariable(Bundle savedInstanceState) {
-        mImmersionFeature = new ImmersionFeature(this);
-        addFeature(mImmersionFeature);
+
     }
 
     @Override

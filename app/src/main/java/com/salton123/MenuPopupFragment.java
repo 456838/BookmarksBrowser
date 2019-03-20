@@ -12,8 +12,10 @@ import android.view.WindowManager;
 import android.widget.GridView;
 
 import com.salton123.base.BaseDialogFragment;
+import com.salton123.bookmarksbrowser.BookBaseDialogFragment;
 import com.salton123.bookmarksbrowser.R;
 import com.salton123.bookmarksbrowser.bean.GridMenuItem;
+import com.salton123.util.ScreenUtils;
 import com.salton123.view.MenuGridAdapter;
 
 
@@ -36,7 +38,7 @@ public class MenuPopupFragment extends BaseDialogFragment {
 
     @Override
     public void initVariable(Bundle savedInstanceState) {
-        setStyle(STYLE_NORMAL, R.style.MyDialog);
+        setStyle(STYLE_NORMAL, R.style.GeneralDialog);
     }
 
     @Override
@@ -64,30 +66,13 @@ public class MenuPopupFragment extends BaseDialogFragment {
         super.onStart();
         Log.i(TAG, "[onStart]");
         Window window = getDialog().getWindow();
-        // hideBottomUIMenu(window);
+        ScreenUtils.hideNavigationBar(window);
         WindowManager.LayoutParams params = window.getAttributes();
         params.gravity = Gravity.BOTTOM;
         params.width = WindowManager.LayoutParams.MATCH_PARENT;
         window.setAttributes(params);
         window.setWindowAnimations(R.style.slide_popup_ani);
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-    }
-
-    /**
-     * 隐藏虚拟按键，并且全屏
-     */
-    protected void hideBottomUIMenu(Window window) {
-        //隐藏虚拟按键，并且全屏
-        if (Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) { // lower api
-            View v = window.getDecorView();
-            v.setSystemUiVisibility(View.GONE);
-        } else if (Build.VERSION.SDK_INT >= 19) {
-            //for new api versions.
-            View decorView = window.getDecorView();
-            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN;
-            decorView.setSystemUiVisibility(uiOptions);
-        }
     }
 
     @Override
