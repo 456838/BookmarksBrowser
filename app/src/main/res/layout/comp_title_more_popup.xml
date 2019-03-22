@@ -9,9 +9,9 @@
     <GridView
         android:id="@+id/gvMenu"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="#ffffff"
+        android:background="@color/color_default_ff728ac6"
         android:horizontalSpacing="5dp"
         android:numColumns="4"
         android:paddingTop="10dp"

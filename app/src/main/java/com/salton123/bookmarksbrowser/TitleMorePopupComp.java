@@ -1,23 +1,19 @@
 package com.salton123.bookmarksbrowser;
 
-import android.app.DialogFragment;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.GridView;
 
 import com.salton123.base.BaseDialogFragment;
-import com.salton123.bookmarksbrowser.R;
 import com.salton123.bookmarksbrowser.bean.GridMenuItem;
 import com.salton123.util.ScreenUtils;
 import com.salton123.view.MenuGridAdapter;
+import com.salton123.view.TitleMoreGridAdapter;
 
 
 /**
@@ -29,7 +25,7 @@ import com.salton123.view.MenuGridAdapter;
 public class TitleMorePopupComp extends BaseDialogFragment {
     private static final String TAG = "MenuPopupComp";
     private GridView gvMenu;
-    private MenuGridAdapter mMenuGridAdapter;
+    private TitleMoreGridAdapter mMenuGridAdapter;
 
     @Override
     public int getLayout() {
@@ -44,7 +40,7 @@ public class TitleMorePopupComp extends BaseDialogFragment {
     @Override
     public void initViewAndData() {
         gvMenu = f(R.id.gvMenu);
-        mMenuGridAdapter = new MenuGridAdapter(activity());
+        mMenuGridAdapter = new TitleMoreGridAdapter(activity());
         gvMenu.setAdapter(mMenuGridAdapter);
         mMenuGridAdapter.add(new GridMenuItem("扫码", getString(R.string.if_retangel)));
         mMenuGridAdapter.add(new GridMenuItem("分享", getString(R.string.if_retangel)));
@@ -62,7 +58,7 @@ public class TitleMorePopupComp extends BaseDialogFragment {
         params.width = WindowManager.LayoutParams.MATCH_PARENT;
         params.y = (int) getResources().getDimension(R.dimen.immersionBarHeight) - ScreenUtils.getStatusHeight(getActivity());
         window.setAttributes(params);
-        window.setWindowAnimations(R.style.slide_popup_ani_down);
+        // window.setWindowAnimations(R.style.slide_popup_ani_down);
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         window.setDimAmount(0f);
     }
