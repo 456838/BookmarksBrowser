@@ -2,22 +2,17 @@ package com.salton123.bookmarksbrowser;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.GridView;
 
 import com.salton123.base.BaseDialogFragment;
-import com.salton123.bookmarksbrowser.BookBaseDialogFragment;
-import com.salton123.bookmarksbrowser.R;
 import com.salton123.bookmarksbrowser.bean.GridMenuItem;
 import com.salton123.util.ScreenUtils;
 import com.salton123.view.MenuGridAdapter;
-
 
 /**
  * User: newSalton@outlook.com

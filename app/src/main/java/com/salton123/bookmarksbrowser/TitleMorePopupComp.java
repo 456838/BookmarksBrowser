@@ -4,15 +4,20 @@ import android.app.DialogFragment;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.GridView;
 
+import com.salton123.base.BaseDialogFragment;
 import com.salton123.bookmarksbrowser.R;
+import com.salton123.bookmarksbrowser.bean.GridMenuItem;
 import com.salton123.util.ScreenUtils;
+import com.salton123.view.MenuGridAdapter;
 
 
 /**
@@ -21,22 +26,31 @@ import com.salton123.util.ScreenUtils;
  * ModifyTime: 14:20
  * Description:
  */
-public class TitleMorePopupComp extends DialogFragment {
+public class TitleMorePopupComp extends BaseDialogFragment {
+    private static final String TAG = "MenuPopupComp";
+    private GridView gvMenu;
+    private MenuGridAdapter mMenuGridAdapter;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public int getLayout() {
+        return R.layout.comp_title_more_popup;
+    }
+
+    @Override
+    public void initVariable(Bundle savedInstanceState) {
         setStyle(STYLE_NORMAL, R.style.GeneralDialog);
-        super.onCreate(savedInstanceState);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.comp_title_more_popup, null);
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void initViewAndData() {
+        gvMenu = f(R.id.gvMenu);
+        mMenuGridAdapter = new MenuGridAdapter(activity());
+        gvMenu.setAdapter(mMenuGridAdapter);
+        mMenuGridAdapter.add(new GridMenuItem("扫码", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("分享", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("阅读模式", getString(R.string.if_retangel)));
+        mMenuGridAdapter.add(new GridMenuItem("看图模式", getString(R.string.if_retangel)));
+        mMenuGridAdapter.notifyDataSetChanged();
     }
 
     @Override
@@ -51,5 +65,11 @@ public class TitleMorePopupComp extends DialogFragment {
         window.setWindowAnimations(R.style.slide_popup_ani_down);
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         window.setDimAmount(0f);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i(TAG, "[onResume]");
     }
 }
