@@ -1,4 +1,4 @@
-package com.salton123;
+package com.salton123.bookmarksbrowser;
 
 import android.app.DialogFragment;
 import android.graphics.Color;
@@ -12,6 +12,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.salton123.bookmarksbrowser.R;
+import com.salton123.util.ScreenUtils;
 
 
 /**
@@ -20,11 +21,11 @@ import com.salton123.bookmarksbrowser.R;
  * ModifyTime: 14:20
  * Description:
  */
-public class TitleMorePopupWindow extends DialogFragment {
+public class TitleMorePopupComp extends DialogFragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        setStyle(STYLE_NORMAL, R.style.MyDialog);
+        setStyle(STYLE_NORMAL, R.style.GeneralDialog);
         super.onCreate(savedInstanceState);
     }
 
@@ -33,25 +34,9 @@ public class TitleMorePopupWindow extends DialogFragment {
         return inflater.inflate(R.layout.comp_title_more_popup, null);
     }
 
-    private boolean isPlay = false;
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final VoiceIntroAniView imageView = view.findViewById(R.id.ivAni);
-        imageView.start();
-        isPlay = true;
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isPlay) {
-                    imageView.pause();
-                } else {
-                    imageView.start();
-                }
-                isPlay = !isPlay;
-            }
-        });
     }
 
     @Override
@@ -61,10 +46,10 @@ public class TitleMorePopupWindow extends DialogFragment {
         WindowManager.LayoutParams params = window.getAttributes();
         params.gravity = Gravity.TOP;
         params.width = WindowManager.LayoutParams.MATCH_PARENT;
-        params.y = (int) getResources().getDimension(R.dimen.immersionBarHeight);
+        params.y = (int) getResources().getDimension(R.dimen.immersionBarHeight) - ScreenUtils.getStatusHeight(getActivity());
         window.setAttributes(params);
-        window.setWindowAnimations(R.style.slide_popup_ani);
-        window.setBackgroundDrawable(new ColorDrawable(Color.GREEN));
+        window.setWindowAnimations(R.style.slide_popup_ani_down);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         window.setDimAmount(0f);
     }
 }

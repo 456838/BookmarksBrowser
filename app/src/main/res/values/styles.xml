@@ -3,7 +3,6 @@
     <style name="AppTheme" parent="@android:style/Theme.Holo.Light">
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowTitleBackgroundStyle">@style/window_title_background_style</item>
         <item name="android:scrollbarSize">4.0dip</item>
         <item name="android:scrollbarThumbHorizontal">@drawable/scrollbar_thumb</item>
         <item name="android:scrollbarThumbVertical">@drawable/scrollbar_thumb</item>
@@ -23,11 +22,6 @@
         <item name="android:activityCloseExitAnimation">@anim/activity_close_exit_animation</item>
     </style>
 
-    <style name="window_title_background_style">
-        <item name="android:textColor">@color/color_ccffffff</item>
-        <item name="android:background">@color/color_ff728ac6</item>
-    </style>
-
     <style name="salton_full_screen_dialog_dim" parent="@android:style/Theme.Dialog">
         <item name="android:backgroundDimAmount">0.5</item>
         <item name="android:windowFrame">@null</item>
@@ -37,13 +31,13 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
-    <style name="salton_full_screen_dialog" parent="@android:style/Theme.Dialog">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/color_ff6c6c6c</item>
-    </style>
-
     <style name="slide_popup_ani">
         <item name="android:windowEnterAnimation">@anim/fragment_slide_up</item>
+        <item name="android:windowExitAnimation">@anim/fragment_slide_down</item>
+    </style>
+
+    <style name="slide_popup_ani_down">
+        <item name="android:windowEnterAnimation">@anim/fragment_slide_up_revert</item>
         <item name="android:windowExitAnimation">@anim/fragment_slide_down</item>
     </style>
     <style name="salton_dialog_vertical_anim" parent="android:Animation">
@@ -51,18 +45,37 @@
         <item name="android:windowExitAnimation">@anim/v_fragment_pop_exit</item>
     </style>
 
+    <style name="permission_anim_modal">
+        <item name="android:windowEnterAnimation">@anim/modal_in</item>
+        <item name="android:windowExitAnimation">@anim/modal_out</item>
+    </style>
+
     <style name="MyDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
         <item name="android:windowTitleStyle">@null</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
         <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <style name="full_screen_dialog">
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">
+            @android:color/transparent
+        </item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent
+        </item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
     <style name="GeneralDialog" parent="android:style/Theme.Holo.Light.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
     </style>
+
 </resources>

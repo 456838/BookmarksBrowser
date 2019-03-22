@@ -28,4 +28,5 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api 'com.google.code.gson:gson:2.8.5'
     api project(':corelite')
+    api "com.squareup.okhttp3:okhttp:3.7.0"
 }

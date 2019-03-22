@@ -1,4 +1,4 @@
-package com.salton123;
+package com.salton123.bookmarksbrowser;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -25,9 +25,8 @@ import com.salton123.view.MenuGridAdapter;
  * ModifyTime: 14:20
  * Description:
  */
-public class MenuPopupFragment extends BaseDialogFragment {
-
-    private static final String TAG = "MenuPopupFragment";
+public class MenuPopupComp extends BaseDialogFragment {
+    private static final String TAG = "MenuPopupComp";
     private GridView gvMenu;
     private MenuGridAdapter mMenuGridAdapter;
 

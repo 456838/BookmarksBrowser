@@ -3,8 +3,6 @@ package com.salton123.bookmarksbrowser;
 import android.os.Bundle;
 import android.view.View;
 
-import com.salton123.MenuPopupFragment;
-import com.salton123.TitleMorePopupWindow;
 import com.salton123.video.VideoPlayActivity;
 
 /**
@@ -51,10 +49,10 @@ public class SplashActivity extends BookBaseActivity {
             case R.id.tvActionWindows:
                 break;
             case R.id.tvActionMenu:
-                new MenuPopupFragment().show(getFragmentManager(), "MenuPopupFragment");
+                new MenuPopupComp().show(getFragmentManager(), "MenuPopupComp");
                 break;
             case R.id.tvTitleMore:
-                new TitleMorePopupWindow().show(getFragmentManager(), "TitleMorePopupWindow");
+                new TitleMorePopupComp().show(getFragmentManager(), "TitleMorePopupWindow");
                 break;
             case R.id.ivManguoTvShow:
                 openActivity(VideoPlayActivity.class, null);
