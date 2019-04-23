@@ -1,11 +1,18 @@
 package com.salton123.bookmarksbrowser;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.view.View;
 
+import com.salton123.base.feature.EventBusFeature;
+import com.salton123.bookmarksbrowser.bean.GridBookmarkItem;
 import com.salton123.bookmarksbrowser.ui.fm.BookMarkGridFragment;
+import com.salton123.bookmarksbrowser.ui.fm.BrowserFragment;
 import com.salton123.bookmarksbrowser.ui.fm.MenuPopupComp;
 import com.salton123.bookmarksbrowser.ui.fm.TitleMorePopupComp;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 
 /**
@@ -28,7 +35,7 @@ public class SplashActivity extends BookBaseActivity {
 
     @Override
     public void initVariable(Bundle savedInstanceState) {
-
+        addFeature(new EventBusFeature(this));
     }
 
     @Override
@@ -59,5 +66,14 @@ public class SplashActivity extends BookBaseActivity {
             default:
                 break;
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN_ORDERED)
+    public void onEvent(GridBookmarkItem item) {
+        Fragment fragment = new BrowserFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("URL", item.subTitle);
+        fragment.setArguments(bundle);
+        getFragmentManager().beginTransaction().add(R.id.flContainer, fragment).show(fragment).commitAllowingStateLoss();
     }
 }

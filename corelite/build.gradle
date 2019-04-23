@@ -20,6 +20,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api 'org.greenrobot:eventbus:3.1.1'
 //    api('me.everything:overscroll-decor-android:1.0.4') {
 //        transitive = false
 //    }

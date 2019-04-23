@@ -1,12 +1,15 @@
 package com.salton123.bookmarksbrowser.ui.fm;
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.salton123.base.BaseFragment;
 import com.salton123.bookmarksbrowser.R;
 import com.salton123.bookmarksbrowser.bean.GridBookmarkItem;
+import com.salton123.util.EventBusUtil;
+import com.salton123.utils.MaterialColors;
 import com.salton123.view.adapter.BookmarkGridAdapter;
 
 /**
@@ -15,7 +18,8 @@ import com.salton123.view.adapter.BookmarkGridAdapter;
  * ModifyTime: 15:44
  * Description:
  */
-public class BookMarkGridFragment extends BaseFragment {
+public class BookMarkGridFragment extends BaseFragment
+        implements AdapterView.OnItemClickListener {
     private GridView gridView;
     private BookmarkGridAdapter mAdapter;
 
@@ -28,8 +32,9 @@ public class BookMarkGridFragment extends BaseFragment {
     public void initVariable(Bundle savedInstanceState) {
         mAdapter = new BookmarkGridAdapter(activity());
         for (int i = 0; i < 30; i++) {
-            mAdapter.add(new GridBookmarkItem("最新合集" + i, "www.baidu.comwww.baidu.com", Color.BLUE));
+            mAdapter.add(new GridBookmarkItem("最新合集" + i, "https://www.baidu.com/", getResources().getColor(MaterialColors.random())));
         }
+
     }
 
     @Override
@@ -37,5 +42,11 @@ public class BookMarkGridFragment extends BaseFragment {
         gridView = f(R.id.gridView);
         gridView.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
+        gridView.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        EventBusUtil.post(mAdapter.getItem(position));
     }
 }
