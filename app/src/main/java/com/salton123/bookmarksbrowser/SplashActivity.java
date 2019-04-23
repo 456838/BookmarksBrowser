@@ -3,7 +3,6 @@ package com.salton123.bookmarksbrowser;
 import android.os.Bundle;
 import android.view.View;
 
-import com.salton123.video.VideoPlayActivity;
 
 /**
  * User: newSalton@outlook.com
@@ -55,7 +54,6 @@ public class SplashActivity extends BookBaseActivity {
                 new TitleMorePopupComp().show(getFragmentManager(), "TitleMorePopupWindow");
                 break;
             case R.id.ivManguoTvShow:
-                openActivity(VideoPlayActivity.class, null);
                 break;
             default:
                 break;

@@ -9,7 +9,7 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion as Integer
         targetSdkVersion rootProject.ext.android.targetSdkVersion as Integer
-        applicationId "com.salton123.colorflydemo"
+        applicationId "com.salton123.bookmarksbrowser"
         versionName rootProject.ext.android.versionName
         versionCode rootProject.ext.android.versionCode as Integer
         ndk {
@@ -53,7 +53,10 @@ android {
     android.applicationVariants.all { variant ->
         variant.outputs.all {
             if (variant.buildType == "release") {
-                outputFileName = "colorfly" + "_release_time_" + releaseTime() + ".apk"
+                outputFileName = "bb" + "_release_time_" + releaseTime() + ".apk"
+            }
+            if (variant.buildType == "debug") {
+                outputFileName = "bb" + "_debug_time_" + releaseTime() + ".apk"
             }
         }
     }

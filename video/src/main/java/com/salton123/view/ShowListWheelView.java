@@ -8,8 +8,8 @@ import android.widget.ListView;
 
 import com.salton123.adapter.abslistview.ViewHolder;
 import com.salton123.base.AdapterBase;
+import com.salton123.video.R;
 import com.salton123.video.bean.LiveAssetCategoryList;
-import com.salton123.bookmarksbrowser.R;
 
 /**
  * User: newSalton@outlook.com
