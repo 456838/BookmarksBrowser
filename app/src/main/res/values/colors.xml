@@ -5,8 +5,10 @@
     <color name="color_default_ff728ac6">#ff728ac6</color>
     <color name="black">#ff000000</color>
     <color name="white">#ffffffff</color>
-    <color name="d">#ff6c6c6c</color>
-    <color name="b0">#00ffffff</color>
-    <color name="b4">#ffffffff</color>
-    <color name="b6">#ccffffff</color>
+    <color name="color_ff6c6c6c">#ff6c6c6c</color>
+    <!--<color name="b0">#00ffffff</color>-->
+    <!--<color name="b4">#ffffffff</color>-->
+    <!--<color name="b6">#ccffffff</color>-->
+    <color name="color_ff43b0f0">#FF43B0F0</color>
+
 </resources>

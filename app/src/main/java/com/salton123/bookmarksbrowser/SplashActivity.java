@@ -3,6 +3,10 @@ package com.salton123.bookmarksbrowser;
 import android.os.Bundle;
 import android.view.View;
 
+import com.salton123.bookmarksbrowser.ui.fm.BookMarkGridFragment;
+import com.salton123.bookmarksbrowser.ui.fm.MenuPopupComp;
+import com.salton123.bookmarksbrowser.ui.fm.TitleMorePopupComp;
+
 
 /**
  * User: newSalton@outlook.com
@@ -30,9 +34,8 @@ public class SplashActivity extends BookBaseActivity {
     @Override
     public void initViewAndData() {
         setListener(R.id.tvActionLeft, R.id.tvActionRight, R.id.tvActionHome,
-                R.id.tvActionWindows, R.id.tvActionMenu, R.id.tvTitleMore,
-                R.id.ivManguoTvShow
-        );
+                R.id.tvActionWindows, R.id.tvActionMenu, R.id.tvTitleMore);
+        getFragmentManager().beginTransaction().add(R.id.flContainer, new BookMarkGridFragment()).commitAllowingStateLoss();
     }
 
     @Override
@@ -52,8 +55,6 @@ public class SplashActivity extends BookBaseActivity {
                 break;
             case R.id.tvTitleMore:
                 new TitleMorePopupComp().show(getFragmentManager(), "TitleMorePopupWindow");
-                break;
-            case R.id.ivManguoTvShow:
                 break;
             default:
                 break;

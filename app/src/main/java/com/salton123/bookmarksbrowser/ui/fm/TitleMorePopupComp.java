@@ -1,4 +1,4 @@
-package com.salton123.bookmarksbrowser;
+package com.salton123.bookmarksbrowser.ui.fm;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -10,10 +10,10 @@ import android.view.WindowManager;
 import android.widget.GridView;
 
 import com.salton123.base.BaseDialogFragment;
+import com.salton123.bookmarksbrowser.R;
 import com.salton123.bookmarksbrowser.bean.GridMenuItem;
 import com.salton123.util.ScreenUtils;
-import com.salton123.view.MenuGridAdapter;
-import com.salton123.view.TitleMoreGridAdapter;
+import com.salton123.view.adapter.TitleMoreGridAdapter;
 
 
 /**

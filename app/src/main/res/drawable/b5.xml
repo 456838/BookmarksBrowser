@@ -4,8 +4,8 @@
     <item android:id="@android:id/background">
         <shape>
             <corners android:radius="0.0dip" />
-            <stroke android:width="0.0px" android:color="@color/b6" />
-            <solid android:color="@color/b0" />
+            <stroke android:width="0.0px" android:color="@color/color_ccffffff" />
+            <solid android:color="@color/color_00ffffff" />
         </shape>
     </item>
     <item android:id="@android:id/progress">

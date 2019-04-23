@@ -1,4 +1,4 @@
-package com.salton123.view;
+package com.salton123.view.adapter;
 
 import android.content.Context;
 
@@ -7,9 +7,9 @@ import com.salton123.adapter.abslistview.ViewHolder;
 import com.salton123.bookmarksbrowser.R;
 import com.salton123.bookmarksbrowser.bean.GridMenuItem;
 
-public class TitleMoreGridAdapter extends CommonAdapter<GridMenuItem> {
-    public TitleMoreGridAdapter(Context context) {
-        super(context, R.layout.adapter_item_title_more_grid);
+public class MenuGridAdapter extends CommonAdapter<GridMenuItem> {
+    public MenuGridAdapter(Context context) {
+        super(context, R.layout.adapter_item_menu_grid);
     }
 
     @Override

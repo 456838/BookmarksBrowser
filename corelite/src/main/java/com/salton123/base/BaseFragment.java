@@ -2,6 +2,7 @@ package com.salton123.base;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,13 +20,34 @@ import java.util.List;
  * Description:
  */
 public abstract class BaseFragment extends Fragment implements IComponentLife {
-    private FragmentDelegate mActivityDelegate = new FragmentDelegate(this);
+    private FragmentDelegate mActivityDelegate;
     private List<IFeature> mFeatures = new ArrayList<>();
 
     public void addFeature(IFeature feature) {
         this.mFeatures.add(feature);
     }
 
+    @Override
+    public void onAttach(final Context context) {
+        super.onAttach(context);
+        mActivityDelegate = new FragmentDelegate(this) {
+            @Override
+            Activity activity() {
+                return (Activity) context;
+            }
+        };
+    }
+
+    @Override
+    public void onAttach(final Activity activity) {
+        super.onAttach(activity);
+        mActivityDelegate = new FragmentDelegate(this) {
+            @Override
+            Activity activity() {
+                return activity;
+            }
+        };
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

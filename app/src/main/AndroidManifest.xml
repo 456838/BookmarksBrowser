@@ -50,7 +50,7 @@
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="com.z28j.intent.action.openpage" />
+                <action android:name="${applicationId}.intent.action.openpage" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -107,16 +107,16 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.salton123.video.VideoPlayActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:hardwareAccelerated="true"
-            android:launchMode="singleTask"
-            android:screenOrientation="landscape"
-            android:theme="@style/SplashTheme"
-            android:windowSoftInputMode="adjustResize|stateHidden"
-            >
-        </activity>
+        <!--<activity-->
+            <!--android:name="com.salton123.video.VideoPlayActivity"-->
+            <!--android:configChanges="keyboard|keyboardHidden|orientation|screenSize"-->
+            <!--android:hardwareAccelerated="true"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:screenOrientation="landscape"-->
+            <!--android:theme="@style/SplashTheme"-->
+            <!--android:windowSoftInputMode="adjustResize|stateHidden"-->
+            <!--&gt;-->
+        <!--</activity>-->
         <!-- FileProvider 配置 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
