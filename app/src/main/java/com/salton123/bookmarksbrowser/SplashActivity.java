@@ -7,7 +7,9 @@ import com.salton123.base.feature.PermissionFeature;
 import com.salton123.bookmarksbrowser.manager.BrowserEntity;
 import com.salton123.bookmarksbrowser.manager.BrowserManager;
 import com.salton123.bookmarksbrowser.ui.fm.BrowserFragment;
+import com.salton123.bookmarksbrowser.ui.fm.BrowserListPopupComp;
 import com.salton123.bookmarksbrowser.ui.fm.MenuPopupComp;
+import com.salton123.bookmarksbrowser.ui.fm.TestPopupComp;
 import com.salton123.bookmarksbrowser.ui.fm.TitleMorePopupComp;
 import com.salton123.utils.FragmentUtil;
 
@@ -70,6 +72,7 @@ public class SplashActivity extends BookBaseActivity {
                 FragmentUtil.add(getFragmentManager(), mCurrentBrowserFragment, R.id.flContainer, "BrowserFragment");
                 break;
             case R.id.tvActionWindows:
+                new BrowserListPopupComp().show(getFragmentManager(), "BrowserListPopupComp");
                 break;
             case R.id.tvActionMenu:
                 new MenuPopupComp().show(getFragmentManager(), "MenuPopupComp");
