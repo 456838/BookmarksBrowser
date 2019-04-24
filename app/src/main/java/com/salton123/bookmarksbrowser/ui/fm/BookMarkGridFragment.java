@@ -34,7 +34,6 @@ public class BookMarkGridFragment extends BaseFragment
         for (int i = 0; i < 30; i++) {
             mAdapter.add(new GridBookmarkItem("最新合集" + i, "https://www.baidu.com/", getResources().getColor(MaterialColors.random())));
         }
-
     }
 
     @Override
