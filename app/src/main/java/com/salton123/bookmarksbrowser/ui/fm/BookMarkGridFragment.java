@@ -32,7 +32,7 @@ public class BookMarkGridFragment extends BaseFragment
     public void initVariable(Bundle savedInstanceState) {
         mAdapter = new BookmarkGridAdapter(activity());
         for (int i = 0; i < 30; i++) {
-            mAdapter.add(new GridBookmarkItem("最新合集" + i, "https://www.baidu.com/", getResources().getColor(MaterialColors.random())));
+            mAdapter.add(new GridBookmarkItem("百度", "仅供参考", "https://www.baidu.com/", getResources().getColor(MaterialColors.random())));
         }
     }
 
